@@ -1,0 +1,38 @@
+---
+title: "MIB2020"
+attributes:
+  cluster:
+    widget: "select"
+    options:
+      - "notchpeak"
+  num_cores:
+    widget: "number_field"
+    label: "Number of cores"
+    value: 1
+    help: "Maximum number of CPU cores is 4"
+    min: 1
+    max: 4
+  bc_num_hours:
+    label: "Number of hours"
+    value: 1
+    min: 1
+    max: 8
+    step: 1
+    help: "Maximum wall time on notchpeak-shared-short is 8 hours."
+  my_account:
+    label: "Account"
+    widget: "select"
+    options:
+      - "notchpeak-shared-short"
+  my_queue:
+    label: "Partition"
+    widget: "select"
+    options:
+      - "notchpeak-shared-short"
+form:
+  - cluster
+  - num_cores
+  - bc_num_hours
+  - my_account
+  - my_queue
+  - bc_email_on_started

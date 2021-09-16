@@ -29,6 +29,9 @@ attributes:
     widget: "select"
     options:
       - "notchpeak-shared-short"
+  bc_email_on_started:
+    help: "If you do not receive the email, check your [Profile](https://www.chpc.utah.edu/role/user/edit_profile.php) for correct address."
+
 form:
   - cluster
   - num_cores

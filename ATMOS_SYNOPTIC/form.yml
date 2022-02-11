@@ -1,0 +1,26 @@
+---
+title: "ATMOS Synoptic"
+attributes:
+  cluster:
+    widget: "select"
+    options:
+      - "frisco1"
+      - "frisco4"
+      - "frisco5"
+      - "frisco6"
+      - "frisco8"
+    value: "frisco8"
+    help: |
+      Select the cluster or Frisco node to create this session on. Frisco8 is the most powerful but if things are slow try frisco1 and frisco[4,5,6] in that order.
+  bc_num_hours:
+    value: 1
+    min: 1
+    step: 1
+    help: "Maximum wall time for the job"
+  bc_vnc_resolution:
+    required: true
+
+form:
+  - cluster
+  - bc_num_hours
+  - bc_vnc_resolution

@@ -1,0 +1,12 @@
+---
+name: ATMOS Synoptic
+category: Classes
+subcategory: Atmospheric Sciences
+role: batch_connect
+description: |
+  This app will launch a [IDV] GUI on a [Frisco node] for class ATMOS1234. 
+
+  [IDV]: https://www.unidata.ucar.edu/software/idv/5_7/docs/userguide/index.html
+  [HPC clusters]: https://www.chpc.utah.edu/resources/HPC_Clusters.php
+  [Frisco node]: https://www.chpc.utah.edu/documentation/guides/frisco-nodes.php
+

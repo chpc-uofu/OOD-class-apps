@@ -1,0 +1,12 @@
+---
+name: MIB2020
+category: Classes
+subcategory: Bioinformatics
+role: batch_connect
+description: |
+  This app will launch [RStudio Server] an IDE for [R] on one node of a [Notchpeak cluster] for clas MIB2020.
+ 
+  [RStudio Server]: https://www.rstudio.com/products/rstudio-server/
+  [R]: https://www.r-project.org/
+  [Notchpeak cluster]: https://www.chpc.utah.edu/documentation/policies/2.1GeneralHPCClusterPolicies.php#Pol2.1.6
+

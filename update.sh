@@ -7,6 +7,7 @@ APPS="ATMOS5340 ATMOS_SYNOPTIC CHEN2450 CHEN_Jupyter GEOG5670_desktop MIB2020"
 DATE=`date +%Y-%m-%d`
 BAKDIR="/var/www/ood/apps/sys-$DATE"
 
+cd /var/www/ood/apps/sys
 if [[ ! -d $BAKDIR ]]; then
   mkdir -p $BAKDIR
 fi

@@ -11,21 +11,21 @@ attributes:
     options:
       - "notchpeak"
   bc_num_hours:
-    value: 2
+    value: 12
     min: 1
-    max: 8
+    max: 12
     step: 1
-    help: "Maximum wall time on notchpeak-shared-short is 8 hours."
+    help: "Default wall time is 8 hours."
   my_account:
     label: "Account"
     widget: "select"
     options:
-      - "notchpeak-shared-short"
+      - "neurostats-np"
   my_queue:
     label: "Partition"
     widget: "select"
     options:
-      - "notchpeak-shared-short"
+      - "skadi-shared-np"
   bc_email_on_started:
     help: "If you do not receive the email, check your [Profile](https://www.chpc.utah.edu/role/user/edit_profile.php) for correct address."
 

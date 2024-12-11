@@ -1,11 +1,11 @@
 ---
-name: ATMOS5340
+name: ATMOS5550
 category: Classes
 subcategory: Atmospheric Sciences
 role: batch_connect
 description: |
   This app will launch a [Jupyter Lab] server using [Python] on the [Notchpeak
-  cluster], notchpeak-shared-short account and partition using one CPU core for class ATMOS5340.
+  cluster], notchpeak-shared-short account and partition using one CPU core for class ATMOS5550.
 
   [Jupyter Lab]: https://jupyter.org/
   [Python]: https://www.python.org/

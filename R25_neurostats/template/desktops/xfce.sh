@@ -15,10 +15,25 @@ xfconf-query -c xfce4-session -p /startup/ssh-agent/enabled -n -t bool -s false
 xfconf-query -c xfce4-session -p /startup/gpg-agent/enabled -n -t bool -s false
 
 # Set the desktop background
-# set background image
-xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVNC-0/workspace0/last-image -s /uufs/chpc.utah.edu/sys/ondemand/chpc-class/R25_neurostats/template/desktops/MainLogo_blk_fullcolor.tif
-# set tiled image style
-xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVNC-0/workspace0/image-style -s 2
+# https://www.friendlyskies.net/notebook/how-to-change-xfce-wallpaper-from-the-command-line-or-terminal
+# located in ~/.config/xfce4/xfconf/xfce-perchannel-xml
+#xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVNC-0/workspace0/last-image -s /uufs/chpc.utah.edu/sys/ondemand/chpc-class/R25_neurostats/template/desktops/MainLogo_blk_fullcolor.tif
+#xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s /uufs/chpc.utah.edu/sys/ondemand/chpc-class/R25_neurostats/template/desktops/MainLogo_blk_fullcolor.tif
+#xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorxrdp_0/workspace0/last-image -s /uufs/chpc.utah.edu/sys/ondemand/chpc-class/R25_neurostats/template/desktops/MainLogo_blk_fullcolor.tif
+#xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorfastx_0/workspace0/last-image -s /uufs/chpc.utah.edu/sys/ondemand/chpc-class/R25_neurostats/template/desktops/MainLogo_blk_fullcolor.tif
+# set centered image style (3), tiled (2), stretched (3)
+#xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVNC-0/workspace0/image-style -s 1
+# set white background
+# https://askubuntu.com/questions/380550/xubuntu-how-to-set-the-wallpaper-using-the-command-line
+#xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorVNC-0/workspace0/rgba1 -n -t double -t double -t double -t double -s 255 -s 255 -s 255 -s 255
+
+cp /uufs/chpc.utah.edu/sys/ondemand/chpc-class/R25_neurostats/template/desktops/xfce4-desktop.xml ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+
+# black color desktop icon label
+if [ ! -d "${HOME}/.config/gtk-3.0" ]; then
+  mkdir -p ${HOME}/.config/gtk-3.0
+fi
+cp /uufs/chpc.utah.edu/sys/ondemand/chpc-class/R25_neurostats/template/desktops/gtk.css ${HOME}/.config/gtk-3.0/
 
 # Set Firefox default homepage
 # rough info at https://www.commandlinefu.com/commands/view/5314/change-the-homepage-of-firefox
@@ -29,6 +44,8 @@ fi
 # or if exists
 # sed -i 's|\("browser.startup.homepage",\) "\(.*\)"|\1 "file:///uufs/chpc.utah.edu/sys/ondemand/chpc-class/R25_neurostats/Website/html/index.html"|' $HOME/.mozilla/firefox/*.default-default/prefs.js
 
+# disable screensaver screen lockout
+cp /uufs/chpc.utah.edu/sys/ondemand/chpc-class/R25_neurostats/template/desktops/.xscreensaver ${HOME}/
 
 # Disable useless services on autostart
 AUTOSTART="${HOME}/.config/autostart"

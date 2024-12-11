@@ -17,7 +17,8 @@ cd "${HOME}"
   export XDG_CACHE_HOME="$(mktemp -d)"
   module restore
   set -x
-  xfwm4 --compositor=off --daemon --sm-client-disable
+  xfwm4 --compositor=off --sm-client-disable
+#  xfwm4 --compositor=off --daemon --sm-client-disable
   xsetroot -solid "#D3D3D3"
   xfsettingsd --sm-client-disable
   xfce4-panel --sm-client-disable
@@ -28,7 +29,7 @@ cd "${HOME}"
 #
 
 # Load the required environment
-module load idv/6.0u2
+module load idv/6.1u2
 
 idv_opt="-plugin https://weather.utah.edu/synoptic/idv/Site_Config/plugins/plugins.jar -sitepath /uufs/chpc.utah.edu/common/home/horel-group/archive/synoptic/idv/Site_Config"
 
@@ -39,7 +40,8 @@ set -x
 <%- if /frisco/.match(context.cluster) == nil -%>
   runIDV $idv_opt |& tee "<%= session.staged_root.join("idv.log") %>"
 <%- else -%>
-  vglrun -c proxy -d :0.0 runIDV $idv_opt |& tee "<%= session.staged_root.join("idv.log") %>"
+#  vglrun -c proxy -d :0.0 runIDV $idv_opt |& tee "<%= session.staged_root.join("idv.log") %>"
+  vglrun -d $DISPLAY -c proxy runIDV $idv_opt |& tee "<%= session.staged_root.join("idv.log") %>"
 <%- end -%>
 IDV_EXIT_CODE=${PIPESTATUS[0]}
 { set +x; } 2>/dev/null

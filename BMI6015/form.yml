@@ -1,0 +1,23 @@
+---
+title: "BMI6105"
+attributes:
+  bc_num_hours:
+    value: 1
+    min: 1
+    max: 8
+    step: 1
+    help: "Maximum wall time on notchpeak-shared-short is 8 hours."
+  my_job_type:
+    label: "Type of job"
+    widget: "select"
+    options:
+      - ['4 CPUs', 'np4cpu']
+      - ['8 CPUs', 'np8cpu']
+      - ['1 GPU, GeForce 1080Ti', 'np1gpu']
+  bc_email_on_started:
+    help: "If you do not receive the email, check your [Profile](https://www.chpc.utah.edu/role/user/edit_profile.php) for correct address."
+
+form:
+  - bc_num_hours
+  - my_job_type
+  - bc_email_on_started

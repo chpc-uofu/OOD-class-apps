@@ -1,0 +1,5 @@
+/* default label state */
+  XfdesktopIconView.view .label {
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    text-shadow: 1px 1px 2px black; }

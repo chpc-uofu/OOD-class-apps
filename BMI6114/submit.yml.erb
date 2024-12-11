@@ -1,0 +1,46 @@
+<%-
+  emailcmd = '/uufs/chpc.utah.edu/sys/bin/CHPCEmailLookup.sh ' + ENV["USER"]
+  emailaddr = %x[ #{emailcmd}]
+  if my_job_type == "np8cpu" or my_job_type == "np1gpu"
+    cluster = "notchpeak"
+  elsif my_job_type == "lp2gpu"
+    cluster = "lonepeak"
+  end
+-%>
+
+batch_connect:
+  template: "basic"
+cluster: "<%= cluster %>"
+script:
+  email: <%= emailaddr %>
+  native:
+    - "-N"
+    - "1"
+  <%- if my_job_type == "np8cpu" -%>
+    - "-n"
+    - 8
+    - "--ntasks-per-node=8"
+    - "-A"
+    - "notchpeak-shared-short"
+    - "-p"
+    - "notchpeak-shared-short"
+  <%- elsif my_job_type == "np1gpu" -%>
+    - "-n"
+    - 1
+    - "--ntasks-per-node=1"
+    - "-A"
+    - "notchpeak-shared-short"
+    - "-p"
+    - "notchpeak-shared-short"
+    - "--gres=gpu:1080ti:1"
+  <%- elsif my_job_type == "lp2gpu" -%>
+    - "-n"
+    - 4
+    - "--ntasks-per-node=4"
+    - "-A"
+    - "lonepeak-gpu"
+    - "-p"
+    - "lonepeak-gpu"
+    - "--mem=15G"
+    - "--gres=gpu:1080ti:2"
+  <%- end -%>

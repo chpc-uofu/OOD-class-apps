@@ -3,13 +3,10 @@
 # Set working directory to home directory
 cd "${HOME}"
 
-# load the class Anaconda environment
-#ml use /uufs/chpc.utah.edu/common/home/u0035056/MyModules
-#ml anaconda3/jdh_python
-#conda activate atmos5340a
-ml use /uufs/chpc.utah.edu/common/home/u0703457/MyModules
-ml anaconda3/dvm_python
-conda activate atmos5340 
+# load the CHPC python with Jupyter, NumPy, Pandas
+#ml python/3.10.3
+source /uufs/astro.utah.edu/common/home/u6039460/work/software/pkg/miniconda3/etc/profile.d/conda.sh
+conda activate PHYS4060_2023
 # to export to PDF:
 module load texlive/2019
 
@@ -32,5 +29,4 @@ jupyter --paths
 #jupyter notebook --generate-config 
 # Launch the Jupyter Notebook Server
 # jupyter notebook --config="${CONFIG_FILE}" --debug
-#jupyter notebook --config="${CONFIG_FILE}" 
-jupyter lab --config="${CONFIG_FILE}" 
+jupyter notebook --config="${CONFIG_FILE}" 

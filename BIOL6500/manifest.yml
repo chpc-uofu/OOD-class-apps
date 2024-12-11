@@ -1,15 +1,19 @@
 ---
-name: ATMOS5340
+name: BIOL6500
 category: Classes
-subcategory: Atmospheric Sciences
+subcategory: Biology
 role: batch_connect
 description: |
-  This app will launch a [Jupyter Lab] server using [Python] on the [Notchpeak
-  cluster], notchpeak-shared-short account and partition using one CPU core for class ATMOS5340.
-
-  [Jupyter Lab]: https://jupyter.org/
+  This app will launch a [Python] environment in a [Jupyter Notebook] server,
+  or [R] in [RStudio] on the [Notchpeak
+  cluster] using one CPU core for BIOL6500 course.
+ 
+  [Jupyter Notebook]: https://jupyter.org/
   [Python]: https://www.python.org/
+  [RStudio Server]: https://www.rstudio.com/products/rstudio-server/
+  [R]: https://www.r-project.org/
   [HPC cluster]: https://www.chpc.utah.edu/resources/HPC_Clusters.php
   [GPU specification]: https://www.chpc.utah.edu/documentation/guides/gpus-accelerators.php#overview
   [Frisco node]: https://www.chpc.utah.edu/documentation/guides/frisco-nodes.php
   [Notchpeak cluster]: https://www.chpc.utah.edu/documentation/policies/2.1GeneralHPCClusterPolicies.php#Pol2.1.6
+

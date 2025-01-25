@@ -1,0 +1,27 @@
+---
+name: ATMOS5340
+category: Classes
+subcategory: Atmospheric Sciences
+role: batch_connect
+description: |
+  This app will launch a [Jupyter Lab] server using [Python] on the [Notchpeak
+  cluster], notchpeak-shared-short account and partition using one CPU core for class ATMOS5340.
+
+  Course materials:
+
+  [Canvas]
+
+  [Teams]
+
+  [GitHub]
+ 
+  [Jupyter Lab]: https://jupyter.org/
+  [Python]: https://www.python.org/
+  [HPC cluster]: https://www.chpc.utah.edu/resources/HPC_Clusters.php
+  [GPU specification]: https://www.chpc.utah.edu/documentation/guides/gpus-accelerators.php#overview
+  [Frisco node]: https://www.chpc.utah.edu/documentation/guides/frisco-nodes.php
+  [Notchpeak cluster]: https://www.chpc.utah.edu/documentation/policies/2.1GeneralHPCClusterPolicies.php#Pol2.1.6
+  [Canvas]: https://utah.instructure.com/courses/727035
+  [Teams]: https://teams.microsoft.com/l/team/19%3a78c4837f991c463998b580932366bbe8%40thread.tacv2/conversations?groupId=919e742b-e77d-484e-b6bd-52c57e0395df&tenantId=5217e0e7-539d-4563-b1bf-7c6dcf074f91
+  [GitHub]: https://github.com/johnhorel/atmos_5340_2021
+

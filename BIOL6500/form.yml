@@ -8,7 +8,6 @@ attributes:
     options:
       - [ "Python Jupyter", "jupyter" ]
       - [ "R RStudio", "rstudio" ]
-      - [ "VSCode", "vscode" ]
   cluster: 
     widget: "select"
     options:

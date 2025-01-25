@@ -1,75 +1,125 @@
 # Changelog
-
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-## [0.2.2] - 2019-08-20
-### Fixed
-- Fixed bug where user's login shell was always set to Bash inside desktop sessions
 
-## [0.2.1] - 2019-02-07
-### Fixed
-- Spelling
+## [0.6.2] - 2018-04-27
+### Changed
+- Namespace Conda environment kernel paths to avoid collision with module
+  environment kernels.
+- Only attempt to install package if it doesn't exist to speed up launch
+  process.
 
-## [0.2.0] - 2018-03-26
+### Fixed
+- *Hopefully* fixed race condition when downloading packages.
+
+## [0.6.1] - 2018-04-26
+### Changed
+- Added timing information in output logs and increased timeout to 10 minutes.
+
+### Fixed
+- Fixed issue with Conda environments not being loaded properly.
+
+## [0.6.0] - 2018-04-17
 ### Added
-- Added support for the Xfce desktop.
+- Added debug queue as an option.
+- Users can now specify number of cores on the node.
 
 ### Changed
-- Moved "Account" field higher up in the form.
-- Updated date in `LICENSE.txt`.
+- Changed server timeout to 120 seconds to account for running on shared node.
+
+## [0.5.0] - 2018-03-28
+### Added
+- Added support for user-created Conda environments.
+
+### Changed
+- Use custom Jupyter Notebook module provided by SciApps.
+
+## [0.4.1] - 2018-03-06
+### Changed
+- Output more debug info.
+
+## [0.4.0] - 2018-03-06
+### Added
+- Added the various Python modules on OSC Owens as Jupyter kernels.
+- Added the Julia module on OSC Owens as a Jupyter kernel.
+
+### Changed
+- Updated date in `LICENSE.md`.
+- Renamed Account to Project.
+- Changed favicon to cogs.
+- Changed the way we launch Jupyter notebook by now pointing to a custom
+  location for the Jupyter notebook installation.
+- Stopped using login shells to speed up process start times.
+
+## [0.3.0] - 2017-12-07
+### Added
+- Added helpful links in the app description and node type description.
+  [#17](https://github.com/OSC/bc_osc_jupyter/issues/17)
+
+### Changed
+- Updated links in `README.md` to point to correct locations.
+  [#15](https://github.com/OSC/bc_osc_jupyter/issues/15)
+- Made log file more verbose.
 
 ### Fixed
-- Disabled all the unnecessary services that are auto-started when Mate loads.
-- Fixed local configuration directory not always being ignored.
-- Set Mate and Xfce terminals to launch login shell to get proper `TERM` set.
-- Restore module environment in login shells.
+- Fixed some text formatting issues.
+  [#16](https://github.com/OSC/bc_osc_jupyter/issues/16)
+- Removed references to RStudio.
+  [#14](https://github.com/OSC/bc_osc_jupyter/issues/14)
 
-### Removed
-- Remove local OSC configuration as this has moved to
-  [osc-ood-config](https://github.com/OSC/osc-ood-config).
+## [0.2.1] - 2017-10-20
+### Changed
+- Moved the account input field to the top of the form.
 
-## [0.1.2] - 2017-10-12
+### Fixed
+- Removed need for message to user about waiting for server to start.
+  [#13](https://github.com/OSC/bc_osc_jupyter/issues/13)
+
+## [0.2.0] - 2017-10-11
 ### Changed
 - Modified app to take advantage of ERB templates in updated Dashboard.
-  [#3](https://github.com/OSC/bc_desktop/issues/3)
-
-## [0.1.1] - 2017-07-12
-### Changed
 - Changed the `CHANGELOG.md` formatting.
-- Fixed form attributes `node_type` to `null` and `desktop` to `"mate"` for
-  default installs.
 
 ## [0.1.0] - 2017-06-14
 ### Changed
 - Refactored for the new Batch Connect app.
 
+## [0.0.5] - 2017-05-18
 ### Fixed
-- Disable disk check utility on startup.
-  [#2](https://github.com/OSC/bc_desktop/issues/2)
+- Disable XSRF protection that broke VNCSim auto-login capabilities.
 
-## [0.0.3] - 2017-01-18
-### Fixed
-- Set desktop working dir to user's home dir.
-
-## [0.0.2] - 2017-01-04
+## [0.0.4] - 2017-05-11
 ### Added
-- Added Mate desktop support.
-- Added variable `$DESKTOP` that specifies desktop script run.
+- Added CUDA support to Jupyter through a separate sub-app.
 
-## 0.0.1 (2016-12-14)
+## [0.0.3] - 2017-04-24
+### Removed
+- Versioning the assets removed need for `bin/setup`.
+
+## [0.0.2] - 2017-04-21
+### Added
+- Added `bin/setup` script for easier deployment.
+
+## 0.0.1 - 2017-04-04
 ### Added
 - Initial release!
 
-[Unreleased]: https://github.com/OSC/bc_desktop/compare/v0.2.2...HEAD
-[0.2.2]: https://github.com/OSC/bc_desktop/compare/v0.2.1...v0.2.2
-[0.2.1]: https://github.com/OSC/bc_desktop/compare/v0.2.0...v0.2.1
-[0.2.0]: https://github.com/OSC/bc_desktop/compare/v0.1.2...v0.2.0
-[0.1.2]: https://github.com/OSC/bc_desktop/compare/v0.1.1...v0.1.2
-[0.1.1]: https://github.com/OSC/bc_desktop/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.com/OSC/bc_desktop/compare/v0.0.3...v0.1.0
-[0.0.3]: https://github.com/OSC/bc_desktop/compare/v0.0.2...v0.0.3
-[0.0.2]: https://github.com/OSC/bc_desktop/compare/v0.0.1...v0.0.2
+[Unreleased]: https://github.com/OSC/bc_osc_jupyter/compare/v0.6.2...HEAD
+[0.6.2]: https://github.com/OSC/bc_osc_jupyter/compare/v0.6.1...v0.6.2
+[0.6.1]: https://github.com/OSC/bc_osc_jupyter/compare/v0.6.0...v0.6.1
+[0.6.0]: https://github.com/OSC/bc_osc_jupyter/compare/v0.5.0...v0.6.0
+[0.5.0]: https://github.com/OSC/bc_osc_jupyter/compare/v0.4.1...v0.5.0
+[0.4.1]: https://github.com/OSC/bc_osc_jupyter/compare/v0.4.0...v0.4.1
+[0.4.0]: https://github.com/OSC/bc_osc_jupyter/compare/v0.3.0...v0.4.0
+[0.3.0]: https://github.com/OSC/bc_osc_jupyter/compare/v0.2.1...v0.3.0
+[0.2.1]: https://github.com/OSC/bc_osc_jupyter/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/OSC/bc_osc_jupyter/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/OSC/bc_osc_jupyter/compare/v0.0.5...v0.1.0
+[0.0.5]: https://github.com/OSC/bc_osc_jupyter/compare/v0.0.4...v0.0.5
+[0.0.4]: https://github.com/OSC/bc_osc_jupyter/compare/v0.0.3...v0.0.4
+[0.0.3]: https://github.com/OSC/bc_osc_jupyter/compare/v0.0.2...v0.0.3
+[0.0.2]: https://github.com/OSC/bc_osc_jupyter/compare/v0.0.1...v0.0.2

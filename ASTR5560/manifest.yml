@@ -1,10 +1,19 @@
 ---
 name: ASTR5560
-icon: fa://desktop
 category: Classes
-subcategory: Physics and Astronomy
+subcategory: Astrophysics
 role: batch_connect
 description: |
-  This app will launch an interactive desktop on one compute node. You
-  will have full access to the resources these nodes provide. This is analogous
-  to an interactive batch job.
+  This app will launch a [Python] environment in a [Jupyter Notebook] server,
+  or Terminal in a remote desktop on the [Notchpeak
+  cluster] using one CPU core for ASTR5560 course.
+ 
+  [Jupyter Notebook]: https://jupyter.org/
+  [Python]: https://www.python.org/
+  [RStudio Server]: https://www.rstudio.com/products/rstudio-server/
+  [R]: https://www.r-project.org/
+  [HPC cluster]: https://www.chpc.utah.edu/resources/HPC_Clusters.php
+  [GPU specification]: https://www.chpc.utah.edu/documentation/guides/gpus-accelerators.php#overview
+  [Frisco node]: https://www.chpc.utah.edu/documentation/guides/frisco-nodes.php
+  [Notchpeak cluster]: https://www.chpc.utah.edu/documentation/policies/2.1GeneralHPCClusterPolicies.php#Pol2.1.6
+

@@ -1,0 +1,15 @@
+---
+name: BIOL6500 VSCode
+category: Classes
+subcategory: Biology
+role: batch_connect
+description: |
+  This app will launch a [VSCode] environment on the [Notchpeak
+  cluster] using one CPU core for BIOL6500 course.
+
+  [VSCode]: https://code.visualstudio.com/
+  [HPC cluster]: https://www.chpc.utah.edu/resources/HPC_Clusters.php
+  [GPU specification]: https://www.chpc.utah.edu/documentation/guides/gpus-accelerators.php#overview
+  [Frisco node]: https://www.chpc.utah.edu/documentation/guides/frisco-nodes.php
+  [Notchpeak cluster]: https://www.chpc.utah.edu/documentation/policies/2.1GeneralHPCClusterPolicies.php#Pol2.1.6
+

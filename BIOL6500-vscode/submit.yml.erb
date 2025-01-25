@@ -1,0 +1,23 @@
+<%-
+  emailcmd = '/uufs/chpc.utah.edu/sys/bin/CHPCEmailLookup.sh ' + ENV["USER"]
+  emailaddr = %x[ #{emailcmd}]
+-%>
+
+batch_connect:
+  template: vnc
+  conn_params:
+    - csrftoken
+    - interface
+script:
+  email: <%= emailaddr %>
+  native:
+  <%- if /frisco/.match(cluster) == nil -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 1
+    - "-A"
+    - "<%= my_account %>"
+    - "-p"
+    - "<%= my_queue %>"
+  <%- end -%>
